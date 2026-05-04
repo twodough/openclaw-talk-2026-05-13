@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+/* =========================================================
+   1. Design tokens
+   ========================================================= */
+:root {
+    --r-background-color: #fffaf2;
+    --r-main-font: 'Inter', 'Noto Sans TC', sans-serif;
+    --r-heading-font: 'Inter', 'Noto Sans TC', sans-serif;
+    --r-main-color: #1f2328;
+    --r-heading-color: #1f2328;
+    --r-link-color: #0f62fe;
+    --r-selection-background-color: #ffd166;
+    --r-main-font-size: clamp(16px, 2.25vw, 34px);
+
+    --brand-ink: #1f2328;
+    --brand-paper: #fffaf2;
+    --brand-pink: #ff7ab6;
+    --brand-yellow: #ffe45e;
+    --brand-blue: #7bdff2;
+    --brand-green: #b8f2c2;
+    --brand-lilac: #cdb4ff;
+
+    --border-strong: 5px;
+    --border-normal: 4px;
+    --border-small: 3px;
+    --shadow-lg: 12px 12px 0 var(--brand-ink);
+    --shadow-md: 8px 8px 0 var(--brand-ink);
+    --shadow-sm: 5px 5px 0 var(--brand-ink);
+    --shadow-xs: 3px 3px 0 var(--brand-ink);
+
+    --code-bg: #282a36;
+    --code-shadow: #ff7ab6;
+}
+
+/* =========================================================
+   2. Reveal base reset / typography
+   ========================================================= */
+.reveal,
+.reveal * {
+    box-sizing: border-box;
+}
+
+.reveal {
+    font-family: var(--r-main-font);
+    font-size: var(--r-main-font-size);
+    background:
+        radial-gradient(circle at 16px 16px, rgba(31, 35, 40, 0.08) 2px, transparent 2px),
+        var(--r-background-color);
+    background-size: 32px 32px;
+    color: var(--r-main-color);
+}
+
+.reveal .slides section {
+    padding: 42px;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    text-transform: none;
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+.reveal h1 { font-size: 4.2em; }
+.reveal h3 { font-size: 1.55em; }
+.reveal h4 { font-size: 1.2em; }
+
+.reveal h2 {
+    display: inline-block;
+    margin-bottom: 0.55em;
+    padding: 0.12em 0.35em;
+    background: var(--brand-yellow);
+    border: var(--border-normal) solid var(--brand-ink);
+    box-shadow: var(--shadow-md);
+    font-size: 2.25em;
+}
+
+.reveal p,
+.reveal li {
+    line-height: 1.45;
+}
+
+/* =========================================================
+   3. Generic components
+   ========================================================= */
+.highlight-box,
+.vibe-prompt,
+.callout {
+    margin: 24px 0;
+    padding: 24px;
+    color: var(--r-main-color);
+    background: var(--brand-yellow);
+    border: var(--border-normal) solid var(--brand-ink);
+    box-shadow: var(--shadow-md);
+}
+
+.highlight-box {
+    font-weight: 700;
+}
+
+.reveal a {
+    color: var(--brand-ink);
+}
+
+.pill-link,
+.hero-card-side a,
+.brand-footer a {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    align-items: center;
+    color: var(--brand-ink);
+    text-decoration: none;
+    border: var(--border-small) solid var(--brand-ink);
+    border-radius: 999px;
+    background: var(--brand-paper);
+    box-shadow: 4px 4px 0 var(--brand-ink);
+    padding: 3px 11px 4px;
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.pill-link:hover,
+.hero-card-side a:hover,
+.brand-footer a:hover {
+    background: var(--brand-pink);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--brand-ink);
+}
+
+/* =========================================================
+   4. Hero / title slide - desktop design version
+   ========================================================= */
+.hero-slide {
+    position: relative;
+    min-height: 68vh;
+    padding-top: 18px;
+    text-align: left;
+}
+
+.hero-slide::before,
+.hero-slide::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border: var(--border-normal) solid var(--brand-ink);
+    box-shadow: var(--shadow-sm);
+}
+
+.hero-slide::before {
+    width: 128px;
+    height: 128px;
+    top: 9%;
+    right: 4%;
+    background: var(--brand-blue);
+    transform: rotate(8deg);
+}
+
+.hero-slide::after {
+    width: 92px;
+    height: 92px;
+    left: 3%;
+    bottom: 0;
+    background: var(--brand-pink);
+    border-radius: 50%;
+    transform: rotate(-12deg);
+}
+
+.hero-card {
+    color: var(--brand-ink);
+    border: var(--border-strong) solid var(--brand-ink);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-card-main {
+    width: min(720px, 74%);
+    padding: 34px 42px 42px;
+    background: var(--brand-yellow);
+    transform: rotate(-1.2deg);
+}
+
+.hero-card-main h1 {
+    margin: 0;
+    font-size: clamp(58px, 5.6vw, 104px);
+    line-height: 0.96;
+    letter-spacing: -0.07em;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin: 0 0 20px;
+    padding: 6px 14px;
+    background: var(--brand-paper);
+    border: var(--border-small) solid var(--brand-ink);
+    box-shadow: var(--shadow-sm);
+    font-size: max(20px, 0.65em);
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+
+.hero-card-side {
+    position: absolute;
+    right: 2%;
+    bottom: 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 250px;
+    padding: 18px 22px;
+    background: var(--brand-blue);
+    font-size: max(20px, 0.7em);
+    transform: rotate(2deg);
+}
+
+.hero-card-side strong {
+    font-size: 1.35em;
+    font-weight: 900;
+}
+
+.mini-label {
+    width: fit-content;
+    padding: 3px 9px;
+    background: var(--brand-pink);
+    border: var(--border-small) solid var(--brand-ink);
+    font-weight: 900;
+}
+
+.hero-sticker,
+.hero-badge {
+    position: absolute;
+    border: var(--border-normal) solid var(--brand-ink);
+    box-shadow: var(--shadow-sm);
+    font-weight: 900;
+}
+
+.hero-sticker {
+    top: 0;
+    right: 4%;
+    padding: 12px 18px;
+    background: var(--brand-lilac);
+    font-size: max(18px, 0.62em);
+    transform: rotate(9deg);
+}
+
+.hero-badge {
+    left: 8%;
+    bottom: -2%;
+    padding: 12px 18px;
+    background: var(--brand-green);
+    font-size: max(18px, 0.62em);
+    transform: rotate(-2deg);
+}
+
+/* =========================================================
+   5. Prompt / code layout
+   ========================================================= */
+.vibe-container {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.9fr) minmax(360px, 1.4fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+.vibe-prompt {
+    background: var(--brand-blue);
+    font-size: max(0.78em, 18px);
+    text-align: left;
+    transform: rotate(-0.4deg);
+}
+
+.vibe-prompt strong {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 4px 10px;
+    background: var(--brand-pink);
+    border: var(--border-small) solid var(--brand-ink);
+    box-shadow: 4px 4px 0 var(--brand-ink);
+    font-weight: 900;
+}
+
+.vibe-code {
+    min-width: 0;
+}
+
+.reveal pre {
+    width: 100%;
+    margin: 0;
+    overflow-x: auto;
+    text-align: left;
+    font-size: max(0.56em, 16px);
+    line-height: 1.35;
+    background: var(--code-bg);
+    border: var(--border-normal) solid var(--brand-ink);
+    box-shadow: 8px 8px 0 var(--code-shadow);
+}
+
+.reveal pre code {
+    display: block;
+    max-height: none;
+    padding: 22px 24px;
+    text-align: left;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* =========================================================
+   6. Lists
+   ========================================================= */
+.reveal ul,
+.reveal ol {
+    display: block;
+    width: fit-content;
+    max-width: 82%;
+    margin: 0.35em auto;
+    text-align: left;
+}
+
+.reveal li {
+    margin: 0.42em 0;
+    padding-left: 0.2em;
+}
+
+.reveal ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.reveal ul li {
+    position: relative;
+    padding-left: 1.7em;
+}
+
+.reveal ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.42em;
+    width: 0.62em;
+    height: 0.62em;
+    background: var(--brand-pink);
+    border: var(--border-small) solid var(--brand-ink);
+    box-shadow: var(--shadow-xs);
+    transform: rotate(-8deg);
+}
+
+/* =========================================================
+   7. Persistent footer
+   ========================================================= */
+.brand-footer {
+    position: absolute;
+    bottom: 18px;
+    left: 22px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: rgba(31, 35, 40, 0.55);
+    font-size: max(16px, 0.46em);
+    font-weight: 800;
+}
+
+.reveal .slide-number {
+    right: 22px;
+    bottom: 18px;
+    min-width: 58px;
+    padding: 4px 11px 5px;
+    color: var(--brand-ink);
+    background: var(--brand-yellow);
+    border: var(--border-small) solid var(--brand-ink);
+    border-radius: 999px;
+    box-shadow: var(--shadow-xs);
+    font-family: var(--r-main-font);
+    font-size: max(16px, 0.44em);
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+}
+
+.reveal .slide-number a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* =========================================================
+   8. Mobile fallback - plain and stable, design second
+   ========================================================= */
+@media (max-width: 900px) {
+    :root {
+        --r-main-font-size: 16px;
+    }
+
+    .reveal {
+        background: var(--r-background-color);
+    }
+
+    .reveal .slides section {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .reveal h2 {
+        font-size: clamp(30px, 8vw, 48px);
+        box-shadow: none;
+    }
+
+    .vibe-container {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .highlight-box,
+    .vibe-prompt,
+    .callout,
+    .reveal pre {
+        max-width: 100%;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .reveal pre code {
+        padding: 14px;
+    }
+
+    .reveal ul,
+    .reveal ol {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .reveal ul li::before {
+        box-shadow: none;
+    }
+
+    .hero-slide {
+        position: static;
+        display: block;
+        min-height: auto;
+        padding: 0 0 72px;
+        text-align: left;
+    }
+
+    .hero-slide::before,
+    .hero-slide::after {
+        display: none;
+    }
+
+    .hero-card,
+    .hero-sticker,
+    .hero-badge,
+    .eyebrow,
+    .mini-label,
+    .hero-card-side a,
+    .brand-footer a {
+        max-width: 100%;
+        box-shadow: none;
+        transform: none;
+    }
+
+    .hero-card,
+    .hero-sticker,
+    .hero-badge,
+    .eyebrow,
+    .mini-label {
+        border-width: 3px;
+    }
+
+    .hero-sticker,
+    .hero-badge,
+    .hero-card-side {
+        position: static;
+        display: block;
+        width: auto;
+        margin: 10px 0 0;
+    }
+
+    .hero-card-main {
+        width: auto;
+        padding: 14px;
+    }
+
+    .hero-card-main h1 {
+        margin: 0;
+        font-size: clamp(28px, 9vw, 42px);
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+    }
+
+    .eyebrow,
+    .hero-sticker,
+    .hero-badge {
+        width: fit-content;
+        padding: 6px 10px;
+        font-size: 16px;
+    }
+
+    .hero-card-side {
+        min-width: 0;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .hero-card-side a {
+        display: inline-flex;
+        margin: 4px 6px 0 0;
+        overflow-wrap: anywhere;
+        border-width: 2px;
+        padding: 2px 8px 3px;
+    }
+
+    .brand-footer {
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+    .brand-footer a {
+        border-width: 2px;
+        padding: 2px 7px 3px;
+    }
+
+    .reveal .slide-number {
+        right: 10px;
+        bottom: 10px;
+        min-width: 0;
+        padding: 3px 8px 4px;
+        border-width: 2px;
+        box-shadow: none;
+        font-size: 16px;
+    }
+
+    .pill-link:hover,
+    .hero-card-side a:hover,
+    .brand-footer a:hover {
+        box-shadow: none;
+        transform: none;
+    }
+}
