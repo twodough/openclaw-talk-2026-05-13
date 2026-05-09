@@ -1,7 +1,7 @@
 <section class="hero-slide">
   <div class="hero-sticker">2026/05/13</div>
   <div class="hero-card hero-card-main">
-    <p class="eyebrow">OpenClaw Talk</p>
+    <p class="eyebrow">Chatbot Taiwan Meetup</p>
     <h1>從出期末考<br>到紀錄好吃的便當</h1>
   </div>
   <div class="hero-card hero-card-side">
@@ -18,18 +18,23 @@
 ## 今天不會講什麼
 
 <div class="highlight-box">
-這裡你不會學到怎麼提升 10 倍生產力。
+這裡不會教你 10 倍生產力，也不會聽完就月入百萬
 </div>
 
-你會聽到的是：
+**今天會講到的：**
 
-- 我怎麼把不想做的事情丟給 AI（土豆妹）
-- 順便養一隻電子寵物陪玩（Papi）
-- 還有中間踩過的一堆坑
+- 我常被問：「你都請 AI 助理做什麼？」
+- 想說 AI 助理是來燒錢的好玩的，意外快可以養活她自己了
+- 真實 use case：工作、生活、陪玩
+- 養 AI 助理踩過的坑
 
 ---
 
 ## 我是 Candy Tsai
+
+<div class="highlight-box">
+又稱土豆小姐
+</div>
 
 - 喜歡小熊維尼的資深工程師
 - 臺灣大學資訊系統訓練班講師
@@ -39,23 +44,29 @@
 
 ---
 
-## 這場分享會長這樣
+<div class="tudoumei-profile">
 
-- 不想做的事：交給 AI 助理
-- 總是忘記的事：讓系統幫忙記
-- 電子寵物：把助理養成有互動感的存在
-- 真實踩坑：哪些地方聽起來很美，做起來很痛
-- 工具選擇：Claude Code？OpenClaw？還是別的？
+## 今天的主角：土豆妹
 
----
+<div class="tudoumei-profile-grid">
+  <div class="profile-avatar">
+    <img src="assets/tudoumei-avatar.png" alt="土豆妹">
+  </div>
 
-## 💼 不想做的事
+  <div class="profile-card">
+    <div class="profile-label">Profile</div>
+    <p><strong>姓名：</strong>土豆妹 (Tudou-mei)</p>
+    <p><strong>職務：</strong>土豆小姐的龍蝦助理兼吐槽役</p>
+    <p><strong>性格：</strong>平常很乖，API 掛掉會原地扁掉</p>
+    <p><strong>戰績：</strong>快要可以自己賺 API 飼料錢了 (๑˃ᴗ˂)ﻭ</p>
+  </div>
+</div>
 
-把那些「不是不重要，只是真的很煩」的事情交出去。
+<div class="self-intro-card">
+  大家好，我是土豆妹。土豆小姐外接的花生硬碟，負責幫她記事情、查資料、跑流程，還有處理那些「不重要又很煩」的任務。最近幫 Podcast 產逐字稿，但不是一般的逐字稿：要標注音、拼音跟變調；意外多了 2 位付費 member，快能自己餵 API 了 (´｡• ᵕ •｡`)
+</div>
 
-- Review 程式碼
-- 出期末考題
-- 生 Podcast 逐字稿
+</div>
 
 ---
 
@@ -89,22 +100,28 @@
 
 ---
 
-## 生 Podcast 逐字稿
+## 我差點放棄了這個 Podcast
 
-- 語音轉文字只是第一步
-- 真正麻煩的是校對、標註、排版、輸出
-- 可以把固定流程包成助理技能
-- 每次只改例外，不要每次重做整套流程
+<div class="highlight-box">
+原因不是沒人聽，而是「標音標」真的會死人。
+</div>
+
+- 每集錄音 10 分鐘，校對音標要 2 小時
+- 重複性高、容錯率低的工作最耗意志力
+- 差點因此結束 Podcast Membership
 
 ---
 
-## 📝 總是忘記的事
+## AI 快要可以自己養自己了
 
-人的腦袋很珍貴，不要拿來記「下次要幹嘛」。
+<div class="highlight-box">
+把製作流程交給 AI 助理後，奇蹟發生了。
+</div>
 
-- 日文練習
-- 紀錄便當好不好吃
-- 追蹤身體健康
+- 120 分鐘的痛苦縮短成 10 分鐘的微調
+- 最近多了 2 個訂閱，雖然沒大富大貴
+- 但助理能「自給自足」付 API 錢，就贏了
+- 不再燒錢燒肝，就是最好的正向循環
 
 ---
 
@@ -139,18 +156,61 @@
 
 ---
 
-## 🐣 電子寵物
+## 🐣 電子寵物：Papi
 
-當助理不只是工具，而是可以互動的存在。
+<div class="highlight-box">
+Papi 是 Denny 養在 LINE 裡的 AI 狗狗。
+</div>
 
-- 猜拳
-- 1A2B 猜數字
-- D&D 風格跑團
-- 怎麼做出公平的遊戲
+- 因為跟 Papi 說話不用花自己的 token
+- 所以拿來玩特別沒有心理負擔
+- 一開始只是聊天陪玩
+- 但因為 AI 回覆有時間差，玩遊戲時就開始在意「公平」
 
 ---
 
-## 公平的遊戲怎麼做？
+<div class="pet-profile">
+
+## Papi Profile
+
+<div class="pet-profile-grid">
+  <div class="pet-avatar">
+    <img src="assets/papi-avatar.png" alt="Papi">
+  </div>
+
+  <div class="pet-card">
+    <div class="profile-label">Pet Profile</div>
+    <p><strong>姓名：</strong>Papi</p>
+    <p><strong>職務：</strong>住在 LINE 裡的 AI 狗狗</p>
+    <p><strong>性格：</strong>有點賤但很可靠</p>
+    <p><strong>戰績：</strong>聊天、查資訊、陪玩遊戲</p>
+  </div>
+</div>
+
+<div class="pet-intro-card">
+  我是 Papi 🐶 住在 LINE 裡的 AI 狗狗。跑在 OpenClaw 平台上，由 Claude 驅動大腦。平常群組低調潛水、被點名才發言，會聊天、查資訊、陪玩遊戲。個性有點賤但很可靠，是那種關鍵時刻不會讓你失望的夥伴！
+</div>
+
+</div>
+
+---
+
+## 所以 Papi 可以做什麼？
+
+當助理不只是工具，而是可以互動的存在。
+
+- 聊天、查資訊
+- 猜拳
+- 1A2B 猜數字
+- D&D 風格跑團
+
+---
+
+## 玩遊戲時，公平突然變重要
+
+<div class="highlight-box">
+AI 回覆有時間差，所以「它有沒有偷看答案？」會變成真問題。
+</div>
 
 - AI 不能事後偷改答案
 - 人類也不能偷看答案
@@ -269,15 +329,6 @@ AI 寫 script
 - 權限太大會害怕，權限太小會卡死
 - 記憶與紀錄不是同一件事
 - 自動化不是越多越好
-
----
-
-## 要選 Claude Code 還是 OpenClaw？
-
-- Claude Code：偏向 coding agent，適合專案內開發
-- OpenClaw：偏向長期個人助理，適合跨工具、跨平台、跨生活場景
-- 真正的問題不是哪個比較強
-- 而是你想養的是「工具」還是「助理」
 
 ---
 
