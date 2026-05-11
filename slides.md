@@ -133,28 +133,32 @@
 
 ---
 
-## 我差點放棄了這個 Podcast
+## Podcast 逐字稿
 
-<div class="highlight-box">
-原因不是沒人聽，而是「標音標」真的會死人。
+<div class="two-column-slide">
+  <div class="slide-card slide-card-pink">
+    <strong>不是把聲音打成文字而已</strong>
+    <p>還要處理注音、拼音、變調，錯一個音就很尷尬</p>
+    <p class="muted-note">想取消會員制度的隔天，居然有人加入了</p>
+  </div>
+
+  <figure class="slide-figure">
+    <img src="assets/tone-sandhi.png" alt="一的變調">
+    <figcaption>一的變調</figcaption>
+  </figure>
 </div>
-
-- 每集錄音 10 分鐘，校對音標要 2 小時
-- 重複性高、容錯率低的工作最耗意志力
-- 差點因此結束 Podcast Membership
 
 ---
 
-## AI 快要可以自己養自己了
+## 土豆妹接住了逐字稿流程
 
 <div class="highlight-box">
-把製作流程交給 AI 助理後，奇蹟發生了。
+會員制度可以繼續活著了
 </div>
 
-- 120 分鐘的痛苦縮短成 10 分鐘的微調
-- 最近多了 2 個訂閱，雖然沒大富大貴
-- 但助理能「自給自足」付 API 錢，就贏了
-- 不再燒錢燒肝，就是最好的正向循環
+- 注音 / 拼音 / 變調 / 雙語 PDF 先自動產出
+- 2 小時痛苦 → 約 5 分鐘微調
+- 不是賺大錢，但土豆妹開始接近自給自足
 
 ---
 
