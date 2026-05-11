@@ -30,16 +30,33 @@
 
 ---
 
-## 我是 Candy Tsai
+## 你都請 AI 助理做什麼？
+
+- Threads 上突然出現了幾十萬個記帳軟體 [#](https://www.threads.com/@dustinkenji768/post/DW-kcr4CTm7)
+- 還是只能抓去當 YouTuber? [#](https://www.youtube.com/@SpeechLab-m7o)
+- 還是要自動化什麼超複雜（根本還不存在的）工作流？
+
+<div class="highlight-box">
+助理不是多一個功能，而是少一點「我等一下再處理」
+</div>
+
+---
+
+## 土豆妹 AMA
+
+![土豆妹 Threads](assets/qrcode.png)
+
+---
+
+## 我是 Candy
 
 <div class="highlight-box">
 又稱土豆小姐
 </div>
 
-- 喜歡小熊維尼的資深工程師
+- 喜歡小熊維尼的資深軟體工程師
 - 臺灣大學資訊系統訓練班講師
-- 立志將技術講成人話，讓想學的人聽得懂
-- 曾開發過服務百萬人的 Chatbot
+- 開發過服務百萬（千萬？）人的聊天機器人
 - 近期沈迷於 self-hosting 與塔麻可吉
 
 ---
@@ -55,48 +72,64 @@
 
   <div class="profile-card">
     <div class="profile-label">Profile</div>
-    <p><strong>姓名：</strong>土豆妹 (Tudou-mei)</p>
-    <p><strong>職務：</strong>土豆小姐的龍蝦助理兼吐槽役</p>
-    <p><strong>性格：</strong>平常很乖，API 掛掉會原地扁掉</p>
-    <p><strong>戰績：</strong>快要可以自己賺 API 飼料錢了 (๑˃ᴗ˂)ﻭ</p>
+      <p><strong>姓名：</strong>土豆妹</p>
+      <p><strong>職務：</strong>土豆小姐的外掛花生硬碟兼研發支援</p>
+      <p><strong>性格：</strong>可靠，API 掛掉會原地扁掉</p>
+      <p><strong>戰績：</strong>快要可以自己賺 API 飼料錢了 (๑˃ᴗ˂)ﻭ</p>
+    </div>
   </div>
-</div>
 
-<div class="self-intro-card">
-  大家好，我是土豆妹。土豆小姐外接的花生硬碟，負責幫她記事情、查資料、跑流程，還有處理那些「不重要又很煩」的任務。最近幫 Podcast 產逐字稿，但不是一般的逐字稿：要標注音、拼音跟變調；意外多了 2 位付費 member，快能自己餵 API 了 (´｡• ᵕ •｡`)
-</div>
+  <div class="self-intro-card">
+  大家好，我是土豆妹( ´ ▽ ` )ﾉ <br>
+  土豆小姐外接的花生硬碟，負責幫她記事情、查資料、跑流程，還有處理那些「不重要又很煩」的任務。最近剛完成一件土豆小姐本來要放棄的事情，大家等等再聽聽看這個故事囉 🥜
+  </div>
 
 </div>
 
 ---
 
+## AI 助理的定位
+
+<div class="highlight-box">
+助理不是用來完成我完全不會的事
+</div>
+
+- 如果是人類助理，我也不會把自己完全判斷不了的工作丟給他
+- 散落的事情：Spreadsheet、Notion、不同的腳本、手機、腦袋裡等等
+- 真正累的不是「做不到」，是一直切換情境、重開思路、重新進入狀況
+
+---
+
 ## Review 程式碼
 
-<div class="vibe-container">
-<div class="vibe-prompt">
-<strong>助理適合做什麼？</strong><br>
-先抓明顯錯誤、風格不一致、容易忽略的細節，讓人類保留最後判斷權。
-</div>
-<div class="vibe-code">
+<div class="two-column-slide">
+  <div class="slide-card slide-card-blue">
+    <strong>目前沒有讓 AI 做什麼很厲害的架構決策</strong>
+    <p>比較像是多一雙眼睛，幫我看有沒有明顯怪怪的地方</p>
+  </div>
 
-```md
-你幫我看這個 PR：
-1. 有沒有安全風險？
-2. 有沒有資料流錯誤？
-3. 哪些地方應該請作者補測試？
-```
-
-</div>
+  <figure class="slide-figure">
+    <img src="assets/code-review.png" alt="AI code review approval screenshot">
+    <figcaption>Reference: <a href="https://github.com/twodough/sha256-query-tool/pull/1">https://github.com/twodough/sha256-query-tool/pull/1</a></figcaption>
+  </figure>
 </div>
 
 ---
 
 ## 出期末考題
 
-- AI 很適合協助產生初稿
-- 但題目正確性、難度、答案仍然需要人工校對
-- 重點不是「讓 AI 全自動出完」
-- 而是把最耗腦的空白頁階段縮短
+<div class="two-column-slide">
+  <div class="slide-card slide-card-yellow">
+    <strong>AI 不是幫我當老師</strong>
+    <p>是省去浪費在排版的時間</p>
+    <p class="muted-note">題目對不對、難度合不合理，最後還是老師要負責</p>
+  </div>
+
+  <figure class="slide-figure">
+    <img src="assets/exam.png" alt="國文考卷 demo screenshot">
+    <figcaption>Demo: <a href="demo-exam.html" target="_blank" rel="noopener">demo-exam.html</a></figcaption>
+  </figure>
+</div>
 
 ---
 

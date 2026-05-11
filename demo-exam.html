@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>國文選擇題範例卷｜AI 助理產生初稿示意</title>
+  <style>
+    @page { size: A4; margin: 16mm 14mm 18mm; }
+    :root {
+      color-scheme: light;
+      --ink: #111;
+      --muted: #666;
+      --line: #333;
+      --edit-blue: #d7ebff;
+      --edit-yellow: #fff3bf;
+      --edit-orange: #f59f00;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 28px 18px 72px;
+      background: #ececec;
+      color: var(--ink);
+      font-family: "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", serif;
+      line-height: 1.55;
+    }
+
+    .exam-editor-toolbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      max-width: 210mm;
+      margin: 0 auto 12px;
+      padding: 8px 10px;
+      background: rgba(255,255,255,.95);
+      border: 1px solid #cfcfcf;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    }
+
+    button {
+      border: 1px solid #aaa;
+      background: #fff;
+      border-radius: 7px;
+      padding: 6px 10px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    button.primary { background: var(--edit-yellow); }
+
+    main.exam-paper {
+      width: 210mm;
+      min-height: 297mm;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 16mm 14mm 18mm;
+      background: #fff;
+      box-shadow: 0 14px 36px rgba(0,0,0,.16);
+    }
+
+    h1 {
+      margin: 0 0 4mm;
+      text-align: center;
+      font-size: 22pt;
+      letter-spacing: .04em;
+      font-weight: 700;
+    }
+
+    .exam-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8mm;
+      margin: 0 0 6mm;
+      padding-bottom: 4mm;
+      border-bottom: 1.5px solid var(--line);
+      font-size: 11pt;
+    }
+
+    .exam-meta p { margin: 0 0 2mm; }
+
+    .exam-instructions {
+      margin: 0 0 6mm;
+      padding: 3mm 4mm;
+      border: 1px solid #999;
+      font-size: 11pt;
+    }
+
+    h2 {
+      margin: 7mm 0 3mm;
+      padding-bottom: 1.5mm;
+      border-bottom: 1px solid var(--line);
+      font-size: 14pt;
+    }
+
+    .question {
+      position: relative;
+      margin: 0 0 4.5mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .edit-mode .question {
+      padding: 2mm 2.5mm;
+      outline: 1px dashed #c8d0dc;
+      outline-offset: 2px;
+    }
+
+    .question-controls {
+      display: none;
+      position: absolute;
+      top: 2mm;
+      right: 2mm;
+      z-index: 5;
+      gap: 5px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      max-width: 78mm;
+    }
+
+    .edit-mode .question-controls { display: flex; }
+
+    .question-controls button {
+      padding: 3px 7px;
+      border-radius: 7px;
+      background: #fffefc;
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    .qtext {
+      margin: 0 0 1.5mm;
+      font-size: 11.5pt;
+      font-weight: 700;
+    }
+
+    .edit-mode .qtext { margin-right: 82mm; }
+
+    ul.choices {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .choice {
+      margin: .8mm 0;
+      font-size: 11.2pt;
+    }
+
+    .reading-passage {
+      margin: 0 0 3.5mm;
+      padding: 3mm 4mm;
+      border: 1px solid #aaa;
+      font-size: 11pt;
+    }
+
+    .teacher-note {
+      display: none;
+      margin-top: 2mm;
+      padding: 2mm 3mm;
+      border-left: 4px solid #d8a600;
+      background: var(--edit-yellow);
+      color: #5b4300;
+      font-size: 10pt;
+    }
+
+    .edit-mode .teacher-note { display: block; }
+
+    .question.break-after {
+      break-after: page;
+      page-break-after: always;
+    }
+
+    .edit-mode .question.break-after {
+      outline-color: var(--edit-orange);
+      box-shadow: inset 0 0 0 2px var(--edit-orange);
+    }
+
+    .edit-mode .question.break-after::after {
+      content: "Page break after this question";
+      display: block;
+      margin-top: 2mm;
+      color: #9a5b00;
+      font-size: 9.5pt;
+      text-align: right;
+    }
+
+    .question.has-continuation-note {
+      box-shadow: inset 0 0 0 2px #74c0fc;
+    }
+
+    .continuation-note,
+    .end-note {
+      display: none;
+      margin-top: 2mm;
+      padding: 1.5mm 2.5mm;
+      border-radius: 6px;
+      font-size: 10pt;
+    }
+
+    .edit-mode .continuation-note,
+    .edit-mode .end-note { display: block; }
+
+    .continuation-note {
+      background: #e7f5ff;
+      color: #0b5c87;
+    }
+
+    .end-note {
+      background: var(--edit-yellow);
+      color: #7a5200;
+    }
+
+    .answer-key {
+      margin-top: 8mm;
+      padding-top: 4mm;
+      border-top: 1.5px solid var(--line);
+      break-before: page;
+      page-break-before: always;
+    }
+
+    .answer-grid {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11pt;
+    }
+
+    .answer-grid td,
+    .answer-grid th {
+      border: 1px solid #333;
+      padding: 2mm;
+      text-align: center;
+    }
+
+
+    @media print {
+      body { padding: 0; background: #fff; }
+      main.exam-paper { width: auto; min-height: auto; padding: 0; box-shadow: none; }
+      .exam-editor-toolbar,
+      .question-controls,
+      .teacher-note,
+      .demo-note { display: none !important; }
+      .edit-mode .question,
+      .question.has-continuation-note,
+      .edit-mode .question.break-after {
+        padding: 0;
+        outline: none !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+      .edit-mode .qtext { margin-right: 0; }
+      .continuation-note,
+      .end-note {
+        display: block !important;
+        margin-top: 2mm;
+        padding: 0;
+        background: transparent;
+        color: #333;
+        text-align: center;
+        font-size: 9.5pt;
+      }
+      .question.break-after {
+        break-after: page !important;
+        page-break-after: always !important;
+      }
+      .edit-mode .question.break-after::after { display: none; }
+    }
+  </style>
+</head>
+<body class="edit-mode">
+  <div class="exam-editor-toolbar">
+    <button type="button" class="primary" id="toggle-edit-mode">Toggle edit mode</button>
+    <button type="button" id="download-html">Download HTML</button>
+    <button type="button" id="export-pdf">Export PDF</button>
+  </div>
+
+  <main class="exam-paper">
+    <h1>國文選擇題範例卷</h1>
+
+    <div class="exam-meta">
+      <div>
+        <p>班級：______________</p>
+        <p>姓名：______________</p>
+      </div>
+      <div>
+        <p>座號：______________</p>
+        <p>作答時間：40 分鐘</p>
+      </div>
+    </div>
+
+    <div class="exam-instructions">
+      本卷共 4 題選擇題，每題 25 分。每題均有 (A)(B)(C)(D) 四個選項，請選出最適當的答案。
+    </div>
+
+    <h2>一、字詞與語文知識</h2>
+
+    <section class="question">
+      <div class="question-controls">
+        <button type="button">加入續題提示</button>
+        <button type="button">插入結尾提醒</button>
+      </div>
+      <p class="qtext">01. 下列成語使用，何者最恰當？</p>
+      <ul class="choices">
+        <li class="choice">(A) 他上課總是專心聽講，真是「心猿意馬」。</li>
+        <li class="choice">(B) 這篇文章結構完整，內容「條理分明」。</li>
+        <li class="choice">(C) 天氣炎熱，大家都「雪上加霜」。</li>
+        <li class="choice">(D) 她考試前完全沒準備，卻說自己「胸有成竹」。</li>
+      </ul>
+      <div class="teacher-note">教師校對區：正解 B。可檢查 A、C、D 是否能作為有效誘答選項。</div>
+    </section>
+
+    <section class="question">
+      <div class="question-controls">
+        <button type="button">加入續題提示</button>
+        <button type="button">插入結尾提醒</button>
+      </div>
+      <p class="qtext">02. 「這本書不但內容豐富，而且文字優美。」此句使用的關聯詞主要表示何種關係？</p>
+      <ul class="choices">
+        <li class="choice">(A) 轉折</li>
+        <li class="choice">(B) 因果</li>
+        <li class="choice">(C) 遞進</li>
+        <li class="choice">(D) 假設</li>
+      </ul>
+      <div class="teacher-note">教師校對區：正解 C。可補充「不但……而且……」的語意層次。</div>
+    </section>
+
+    <h2>二、閱讀理解</h2>
+
+    <div class="reading-passage">
+      請閱讀短文後回答 03–04 題。<br>
+      清晨的市場剛醒來，攤販們忙著整理蔬果，空氣裡混著青草與熱湯的氣味。城市還沒完全喧鬧，生活卻已經悄悄開始。
+    </div>
+
+    <section class="question">
+      <div class="question-controls">
+        <button type="button">加入續題提示</button>
+        <button type="button">插入結尾提醒</button>
+      </div>
+      <p class="qtext">03. 這段文字主要描寫的是什麼？</p>
+      <ul class="choices">
+        <li class="choice">(A) 夜晚市場收攤後的景象</li>
+        <li class="choice">(B) 清晨市場逐漸熱鬧起來的情景</li>
+        <li class="choice">(C) 都市交通尖峰時段的壅塞</li>
+        <li class="choice">(D) 攤販之間激烈競爭的過程</li>
+      </ul>
+      <div class="teacher-note">教師校對區：正解 B。可檢查題幹是否過於直白。</div>
+    </section>
+
+    <section class="question">
+      <div class="question-controls">
+        <button type="button">加入續題提示</button>
+        <button type="button">插入結尾提醒</button>
+      </div>
+      <p class="qtext">04. 文中「生活卻已經悄悄開始」一句，最可能想表達什麼？</p>
+      <ul class="choices">
+        <li class="choice">(A) 城市裡所有人都已經醒來</li>
+        <li class="choice">(B) 市場活動象徵一天日常的展開</li>
+        <li class="choice">(C) 作者不喜歡早起</li>
+        <li class="choice">(D) 市場即將停止營業</li>
+      </ul>
+      <div class="teacher-note">教師校對區：正解 B。可視需求提高選項迷惑度。</div>
+    </section>
+
+    <section class="answer-key">
+      <h2>參考答案</h2>
+      <table class="answer-grid">
+        <tr><th>題號</th><th>01</th><th>02</th><th>03</th><th>04</th></tr>
+        <tr><th>答案</th><td>B</td><td>C</td><td>B</td><td>B</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const toggleButton = document.getElementById('toggle-edit-mode');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('edit-mode');
+      toggleButton.textContent = document.body.classList.contains('edit-mode')
+        ? 'Toggle edit mode'
+        : 'Toggle edit mode: off';
+    });
+
+    document.getElementById('download-html').addEventListener('click', () => {
+      const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'demo-exam.html';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('export-pdf').addEventListener('click', () => window.print());
+
+    document.querySelectorAll('.question-controls button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const question = button.closest('.question');
+        const label = button.textContent.trim();
+
+        if (label === '加入續題提示' || label === '移除續題提示') {
+          let note = question.querySelector('.continuation-note');
+          if (note) {
+            note.remove();
+            question.classList.remove('has-continuation-note', 'break-after');
+            button.textContent = '加入續題提示';
+          } else {
+            note = document.createElement('div');
+            note.className = 'continuation-note';
+            note.textContent = '下一頁還有試題';
+            question.appendChild(note);
+            question.classList.add('has-continuation-note', 'break-after');
+            button.textContent = '移除續題提示';
+          }
+          return;
+        }
+
+        if (label === '插入結尾提醒' || label === '移除結尾提醒') {
+          let note = question.querySelector('.end-note');
+          if (note) {
+            note.remove();
+            button.textContent = '插入結尾提醒';
+          } else {
+            note = document.createElement('div');
+            note.className = 'end-note';
+            note.textContent = '試題已結束，請回頭檢查是不是每題都寫了唷';
+            question.appendChild(note);
+            button.textContent = '移除結尾提醒';
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

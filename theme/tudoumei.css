@@ -87,24 +87,13 @@
 /* =========================================================
    3. Generic components
    ========================================================= */
-.highlight-box,
-.vibe-prompt,
-.callout {
+.highlight-box {
     margin: 24px 0;
     padding: 24px;
     color: var(--r-main-color);
     background: var(--brand-yellow);
     border: var(--border-normal) solid var(--brand-ink);
     box-shadow: var(--shadow-md);
-}
-
-.box-small {
-    font-size: 0.82em;
-    padding: 18px;
-    margin: 12px 0;
-}
-
-.highlight-box {
     font-weight: 700;
 }
 
@@ -112,7 +101,6 @@
     color: var(--brand-ink);
 }
 
-.pill-link,
 .hero-card-side a,
 .brand-footer a {
     display: inline-flex;
@@ -129,7 +117,6 @@
     transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
 }
 
-.pill-link:hover,
 .hero-card-side a:hover,
 .brand-footer a:hover {
     background: var(--brand-pink);
@@ -261,15 +248,8 @@
 }
 
 /* =========================================================
-   5. Prompt / code layout
+   5. Profile slides
    ========================================================= */
-.vibe-container {
-    display: grid;
-    grid-template-columns: minmax(240px, 0.9fr) minmax(360px, 1.4fr);
-    gap: 28px;
-    align-items: start;
-}
-
 /* Dedicated Tudoumei profile slide */
 .tudoumei-profile,
 .pet-profile {
@@ -394,25 +374,81 @@
     max-height: none;
 }
 
-.vibe-prompt {
-    background: var(--brand-blue);
-    font-size: max(0.78em, 18px);
+.two-column-slide {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.95fr) minmax(380px, 1.25fr);
+    gap: 34px;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.slide-card {
+    padding: 28px 30px;
+    border: var(--border-normal) solid var(--brand-ink);
+    box-shadow: var(--shadow-sm);
     text-align: left;
     transform: rotate(-0.4deg);
 }
 
-.vibe-prompt strong {
+.slide-card-blue {
+    background: var(--brand-blue);
+}
+
+.slide-card-yellow {
+    background: var(--brand-yellow);
+}
+
+.slide-card-green {
+    background: var(--brand-green);
+}
+
+.slide-card-pink {
+    background: var(--brand-pink);
+}
+
+.slide-card strong {
     display: inline-block;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     padding: 4px 10px;
     background: var(--brand-pink);
     border: var(--border-small) solid var(--brand-ink);
     box-shadow: 4px 4px 0 var(--brand-ink);
+    font-size: max(20px, 0.64em);
     font-weight: 900;
+    line-height: 1.28;
 }
 
-.vibe-code {
-    min-width: 0;
+.slide-card p {
+    margin: 0.55em 0 0;
+    font-size: max(20px, 0.72em);
+    font-weight: 800;
+    line-height: 1.42;
+}
+
+.slide-card .muted-note {
+    margin-top: 1em;
+    font-size: max(16px, 0.54em);
+    font-weight: 700;
+    opacity: 0.78;
+}
+
+.slide-figure {
+    margin: 0;
+}
+
+.reveal .slide-figure img {
+    display: block;
+    max-height: 46vh;
+    margin: 0 auto;
+}
+
+.slide-figure figcaption {
+    margin-top: 10px;
+    font-size: max(11px, 0.34em);
+    line-height: 1.2;
+    opacity: 0.62;
+    word-break: break-all;
 }
 
 .reveal pre {
@@ -537,7 +573,7 @@
         box-shadow: none;
     }
 
-    .vibe-container,
+    .two-column-slide,
     .tudoumei-profile-grid,
     .pet-profile-grid {
         grid-template-columns: 1fr;
@@ -571,9 +607,8 @@
         box-shadow: none;
     }
 
+    .slide-card,
     .highlight-box,
-    .vibe-prompt,
-    .callout,
     .reveal pre {
         max-width: 100%;
         box-shadow: none;
@@ -696,7 +731,6 @@
         font-size: 16px;
     }
 
-    .pill-link:hover,
     .hero-card-side a:hover,
     .brand-footer a:hover {
         box-shadow: none;
