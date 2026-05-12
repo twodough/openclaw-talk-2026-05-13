@@ -44,7 +44,11 @@
 
 ## 土豆妹 AMA
 
-![土豆妹 Threads](assets/qrcode.png)
+<div class="link-qr-card">
+  <img src="assets/qrcode-twodoughmay.png" alt="土豆妹 Threads QRCode">
+  <strong>土豆妹 Threads</strong>
+  <span><a href="https://threads.com/@twodoughmay">@twodoughmay</a></span>
+</div>
 
 ---
 
