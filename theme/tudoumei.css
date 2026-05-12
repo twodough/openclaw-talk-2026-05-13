@@ -450,12 +450,37 @@
     margin: 0 auto;
 }
 
+.image-pair-slide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reveal .image-pair-slide .slide-figure img {
+    width: 100%;
+    max-height: 56vh;
+}
+
 .slide-figure figcaption {
     margin-top: 10px;
     font-size: max(11px, 0.34em);
     line-height: 1.2;
     opacity: 0.62;
     word-break: break-all;
+}
+
+.screenshot-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.reveal .screenshot-strip img {
+    width: 100%;
+    max-height: 58vh;
+    object-fit: contain;
+    background: var(--brand-paper);
 }
 
 .tall-image-slide {
@@ -612,6 +637,7 @@
     }
 
     .two-column-slide,
+    .screenshot-strip,
     .tudoumei-profile-grid,
     .pet-profile-grid {
         grid-template-columns: 1fr;

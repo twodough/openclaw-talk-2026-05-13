@@ -43,6 +43,18 @@
             transition: 'fade',
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
         });
+
+        // Reveal centers slides before some images finish loading. On refresh,
+        // cached/non-cached image timing can differ, causing image-heavy slides to
+        // appear vertically shifted. Re-layout after images load/decode.
+        Reveal.on('ready', () => {
+            const relayout = () => requestAnimationFrame(() => Reveal.layout());
+            document.querySelectorAll('.reveal img').forEach((img) => {
+                if (!img.complete) img.addEventListener('load', relayout, { once: true });
+                if (img.decode) img.decode().then(relayout).catch(() => {});
+            });
+            relayout();
+        });
     </script>
 </body>
 </html>

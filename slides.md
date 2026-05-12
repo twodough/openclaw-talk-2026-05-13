@@ -73,7 +73,7 @@
   <div class="profile-card">
     <div class="profile-label">Profile</div>
       <p><strong>姓名：</strong>土豆妹</p>
-      <p><strong>職務：</strong>土豆小姐的外掛花生硬碟兼研發支援</p>
+      <p><strong>職務：</strong>在 Discord 裡當土豆小姐的花生硬碟</p>
       <p><strong>性格：</strong>可靠，API 掛掉會原地扁掉</p>
       <p><strong>戰績：</strong>快要可以自己賺 API 飼料錢了 (๑˃ᴗ˂)ﻭ</p>
     </div>
@@ -162,47 +162,33 @@
 
 ---
 
-## 日文練習
-
-- 每天固定出一題
-- 回答後判斷正誤與語感
-- 把答題結果記回資料庫
-- 之後針對弱點重新複習
-
----
-
-## 紀錄好吃的便當
+## 把生活裡的小事接起來
 
 <div class="highlight-box">
-不是每件事都要很偉大，生活中的小資料也很值得被記住。
+把土豆妹當統一的入口，少掉很多「我等一下再記」
 </div>
 
-- 今天吃了什麼？
-- 好不好吃？
-- 會不會想再買？
-- 下次不要踩同一個雷
+- **日文練習**：每天出題、培養語感、錯誤的題目會定期再出現
+- **便當紀錄**：好不好吃、有沒有強迫一定要點飲料、不用因為忘記一直踩同一個雷
+- **健康紀錄**：年紀開始大了，把零散的身體狀況整理起來跟醫生說
 
 ---
 
-## 追蹤身體健康
-
-- 重點不是醫療診斷
-- 而是把零散紀錄整理起來
-- 讓未來的自己看得懂發生過什麼
-- 需要專業判斷時，再把資料帶去給人類專家
-
----
-
-## 🐣 電子寵物：Papi
+## 資料放哪裡不重要，<br>記得下來比較重要
 
 <div class="highlight-box">
-Papi 是 Denny 養在 LINE 裡的 AI 狗狗。
+背後可以是 Notion、Airtable、Spreadsheet、`.md` 檔案
 </div>
 
-- 因為跟 Papi 說話不用花自己的 token
-- 所以拿來玩特別沒有心理負擔
-- 一開始只是聊天陪玩
-- 但因為 AI 回覆有時間差，玩遊戲時就開始在意「公平」
+![便當紀錄](assets/notion-foodie.png)
+
+---
+
+## AI 助理也可以玩樂
+
+- Papi 是養在 LINE 裡的 AI 狗狗
+- 一開始只是聊天陪玩，後來開始猜拳、猜數字、跑 DnD 團
+- 學到：怎麼公平的玩有先後順序的遊戲
 
 ---
 
@@ -217,10 +203,10 @@ Papi 是 Denny 養在 LINE 裡的 AI 狗狗。
 
   <div class="pet-card">
     <div class="profile-label">Pet Profile</div>
-    <p><strong>姓名：</strong>Papi</p>
+    <p><strong>姓名：</strong>Papi（怕屁）</p>
     <p><strong>職務：</strong>住在 LINE 裡的 AI 狗狗</p>
     <p><strong>性格：</strong>有點賤但很可靠</p>
-    <p><strong>戰績：</strong>聊天、查資訊、陪玩遊戲</p>
+    <p><strong>戰績：</strong>有一隻怕屁吉的電子寵物</p>
   </div>
 </div>
 
@@ -232,148 +218,195 @@ Papi 是 Denny 養在 LINE 裡的 AI 狗狗。
 
 ---
 
-## 所以 Papi 可以做什麼？
+## Papi 都在玩什麼？
 
-當助理不只是工具，而是可以互動的存在。
-
-- 聊天、查資訊
-- 猜拳
-- 1A2B 猜數字
-- D&D 風格跑團
-
----
-
-## 玩遊戲時，公平突然變重要
-
-<div class="highlight-box">
-AI 回覆有時間差，所以「它有沒有偷看答案？」會變成真問題。
-</div>
-
-- AI 不能事後偷改答案
-- 人類也不能偷看答案
-- 可以用 commitment scheme 先承諾答案
-- 揭曉時再驗證雜湊值
-
----
-
-## 怎麼樣才能精準做事？
-
-<div class="highlight-box">
-你以為是 Skills，但其實是 scripts。
-</div>
-
-- Skills 決定 AI 什麼時候該做事、怎麼判斷情境
-- Scripts 決定任務怎麼被穩定執行、驗證、重跑
-- Prompt 會飄，人的記憶會漏，script 才是穩定的執行邊界
-- 這也是為什麼 AI 助理最後會長得很像一個小型軟體專案
-
----
-
-## Skill 不是魔法，是 SOP + 工具箱
-
-<div class="highlight-box">
-Skill = 讓 AI 固定執行一套流程
-</div>
-
-```txt
-SKILL.md
-操作手冊 / 何時用 / 怎麼用
-        ↓
-scripts
-真正執行任務的工具
-        ↓
-output
-穩定產出結果
-```
-
-<div class="highlight-box">
-.md 是神經系統，scripts 是肌肉。
+<div class="screenshot-strip">
+  <img src="assets/papi-line-chat-1.jpeg" alt="Papi LINE 對話截圖 1">
+  <img src="assets/papi-line-chat-2-1.jpeg" alt="Papi LINE 對話截圖 2">
+  <img src="assets/papi-line-chat-2-2.jpeg" alt="Papi LINE 對話截圖 3">
 </div>
 
 ---
 
-## 錯的 script 會讓 Skill 穩定地錯
+## AI 有沒有偷偷作弊？
 
-<div class="highlight-box">
-Skill 的可靠性來自測試，不是來自包裝。
+<div class="two-column-slide">
+  <div class="slide-card slide-card-lilac">
+    <strong>以前我們不太會懷疑電腦作弊</strong>
+    <p>程式照規則跑，輸了就是輸了。</p>
+    <p>但 AI 太會說話、太像會想辦法，玩有先後順序的遊戲時，就會開始想：牠是不是偷看了？</p>
+  </div>
+
+  <figure class="slide-figure">
+    <img src="assets/papi-line-chat-3.jpeg" alt="Papi commitment scheme screenshot">
+    <figcaption>跟 Papi 猜拳</figcaption>
+  </figure>
 </div>
 
-```txt
-AI 寫 script
-    ↓
-人類 review
-    ↓
-加測試案例
-    ↓
-驗證 expected output
-    ↓
-變成可信 Skill
-```
+---
 
-- Skill 不會讓 AI 自動變正確，只是把流程固定下來
-- 流程對，就穩定地對；流程錯，就穩定地錯
-- Script 就像 Excel 公式：寫錯只會讓你更有效率地算錯
+## AI 翻車事件
+
+<div class="screenshot-strip">
+
+![格式不對](assets/papi-line-chat-bad-1.jpeg)
+
+![邏輯錯亂](assets/papi-line-chat-bad-2.jpeg)
+
+![沒看到圖](assets/papi-line-chat-bad-3.jpeg)
+
+</div>
 
 ---
 
-## LINE 與 Discord 有什麼不同？
+## 如何精準做事
 
-- LINE 最大限制：push message 有額度，不適合大量 alert-based 任務
-- Discord / Telegram 比較像事件流，可以自然承載頻繁通知與互動
-- LINE 早期 prompt caching 很糟，同樣事情一天可能燒到 120 USD
-- 後來修好後，類似使用量可以降到 30–40 USD
+<div class="highlight-box">
+想像你在找人類助理！
+</div>
 
----
-
-## LINE：最痛的是 alert-based 任務
-
-如果每次提醒都要消耗 push quota，就很難放心開這些任務：
-
-- inbox / 重要信件提醒
-- calendar 會議前提醒、行程異動提醒
-- 服務監控、部署失敗、cron job 掛掉
-- Notion task 到期、待辦卡住太久
-- 學生回答、社群留言、私訊 follow-up
-- 天氣、健康、吃藥、喝水這種高頻生活提醒
+- **寫 Skill**：像公司 SOP，讓助理知道什麼時候該做、該照什麼流程做
+- **選 Model**：像面試，要看反應、聰不聰明、請不請得起
+- **選擇平台**：像工作環境，會決定助理能不能主動出聲、有沒有額外花費
 
 ---
 
-## LINE 成本：prompt caching 的坑
+## Skill 不是魔法
 
-![Prompt caching pricing](assets/prompt-caching-gpt5.5-pricing.png)
+<div class="highlight-box">
+把「做對一次」變成「每次都可以做對」
+</div>
+
+- 不要讓 AI 每次重新想一次怎麼做
+- 把成功路徑變成可重複、可檢查的流程
+- Markdown 寫規則，script 負責穩定執行
 
 ---
 
-## LINE push message 限制
+## 更重要的是 Model！
+
+<div class="highlight-box">
+剛開始比 SKILL 更重要！
+</div>
+
+- **聊天 / 討論**：Gemini 3 Flash，快、便宜、夠聰明、動得起來
+- **幹大事**：GPT 5.5，寫出來的 script 比較不會出錯
+- **GPT 5.4 → 5.5**：體感差很多，不會一直停下來問「要不要執行？」
+
+---
+
+## 平台會決定能做的事
+
+- 能不能主動推播訊息
+- 好不好分門別類做事
+- 有沒有一些怪事
+
+---
+
+## LINE
+
+- 推播有額度，不適合讓助理大量主動通知
+- Reply token 一分鐘過期 ([#](https://developers.line.biz/en/reference/messaging-api/#send-reply-message))
+- 早期 prompt caching 很糟，一天可能燒到 120 USD，後來好了後，類似使用量可以降到 30–40 USD
+
+---
+
+## Prompt Caching
+
+<div class="two-column-slide">
+  <div class="slide-card slide-card-yellow">
+    <strong>可以 cache 的部分</strong>
+    <p>不吃香菜、不要辣、飯少一點、醬另外放、外帶</p>
+    <p class="muted-note">這些是每次都一樣的「固定需求」</p>
+  </div>
+  <figure class="slide-figure">
+    <img src="assets/prompt-caching-gpt5.5-pricing.png" alt="Prompt caching pricing">
+  </figure>
+</div>
+
+---
+
+## LINE Push Message
 
 ![LINE messaging pricing](assets/line-messaging-pricing.png)
 
 ---
 
-## LINE vs Discord：更大的差異
+## LINE vs Discord
 
-- **LINE 是私訊產品**：適合一對一、低頻、強通知感
-- **Discord 是工作空間**：適合頻道、thread、多人協作、長期上下文
-- **LINE 上下文比較扁平**：訊息容易混在一起，分類靠 bot 自己做
-- **Discord 結構比較完整**：channel / forum / thread 本身就是資訊架構
-- **LINE 比較像正式敲門**；Discord 比較像助理坐在工作室角落待命
+<div class="two-column-slide">
+  <div class="slide-card slide-card-green">
+    <strong>LINE 贏在習慣</strong>
+    <p>台灣人很習慣打開</p>
+    <p>比較容易想到「叫助理做事」</p>
+    <p class="muted-note">不好分 channel，主題容易混在一起</p>
+  </div>
+
+  <div class="slide-card slide-card-blue">
+    <strong>Discord 贏在結構</strong>
+    <p>channel / thread / forum</p>
+    <p>適合長期任務與協作</p>
+    <p class="muted-note">我的偏好：認真養助理會選 Discord</p>
+  </div>
+</div>
 
 ---
 
-## 白痴事件與踩坑
+## Discord Forum
 
-- AI 很會自信地做錯事
-- 權限太大會害怕，權限太小會卡死
-- 記憶與紀錄不是同一件事
-- 自動化不是越多越好
+![Discord Forum](assets/discord-forum.png)
+
+---
+
+## Discord Channel
+
+![Discord Channel](assets/discord-channel.png)
+
+---
+
+## Discord Thread
+
+<div class="two-column-slide image-pair-slide">
+  <figure class="slide-figure">
+    <img src="assets/discord-thread.png" alt="Discord Thread">
+  </figure>
+
+  <figure class="slide-figure">
+    <img src="assets/discord-thread-2.png" alt="Discord Thread 2">
+  </figure>
+</div>
+
+---
+
+## 最後的魔王：你
+
+<div class="highlight-box">
+人才是最大的 bottleneck
+</div>
+
+- **權限太大會害怕**：怕它亂寄信、亂刪檔、亂花錢
+- **權限太小會卡死**：什麼都要問你，最後又變成你自己在做
+- **自動化不要貪多**：先從「低風險、常重複、很煩」的事情開始
+
+---
+
+## 如果你現在才要開始
+
+<div class="highlight-box">
+我不會推薦 OpenClaw
+</div>
+
+- 想先體驗「AI 同事」：可以試試 Claude Cowork
+- OpenClaw 有的功能 Claude Code 也逐漸補齊
+- 等你玩出興趣、發現目前的「安全機制」四處在卡你，在進入 OpenClaw 的世界
 
 ---
 
 ## Takeaway
 
 <div class="highlight-box">
-AI 助理不是讓你變成 10 倍速超人，
-而是幫你少做一點討厭的事，
+AI 助理不是讓你變成 10 倍速超人，<br>
+而是幫你少做一點討厭的事，<br>
 多留一點力氣當人。
 </div>
 
@@ -381,5 +414,6 @@ AI 助理不是讓你變成 10 倍速超人，
 
 ## Links
 
-- AI 碎碎念：<https://www.threads.com/@stringpiggy>
-- 個人網站：<https://candys.page>
+- [AI 碎碎念](https://www.threads.com/@stringpiggy)
+- [個人網站](https://candys.page)
+- [土豆妹 Threads](https://www.threads.com/@twodoughmay)
