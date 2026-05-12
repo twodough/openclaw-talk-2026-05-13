@@ -402,7 +402,7 @@
 
 - 想先體驗「AI 同事」：可以試試 Claude Cowork
 - OpenClaw 有的功能 Claude Code 也逐漸補齊
-- 等你玩出興趣、發現目前的「安全機制」四處在卡你，在進入 OpenClaw 的世界
+- 等你玩出興趣、發現目前的「安全機制」四處在卡你，再進入 OpenClaw 的世界
 
 ---
 
