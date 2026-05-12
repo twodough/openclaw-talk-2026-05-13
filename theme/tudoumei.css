@@ -459,6 +459,50 @@
     max-height: 56vh;
 }
 
+.link-qr-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 920px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.link-qr-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: max(16px, 0.48em);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.reveal .link-qr-card img {
+    display: block;
+    width: min(100%, 190px);
+    max-height: 190px;
+    object-fit: contain;
+    background: white;
+}
+
+.link-qr-card strong,
+.link-qr-card span {
+    display: block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.link-qr-card span {
+    font-size: 0.72em;
+    opacity: 0.78;
+}
+
 .slide-figure figcaption {
     margin-top: 10px;
     font-size: max(11px, 0.34em);
@@ -638,6 +682,7 @@
 
     .two-column-slide,
     .screenshot-strip,
+    .link-qr-grid,
     .tudoumei-profile-grid,
     .pet-profile-grid {
         grid-template-columns: 1fr;

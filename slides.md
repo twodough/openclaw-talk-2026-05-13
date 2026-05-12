@@ -26,7 +26,7 @@
 - 我常被問：「你都請 AI 助理做什麼？」
 - 想說 AI 助理是來燒錢的好玩的，意外快可以養活她自己了
 - 真實 use case：工作、生活、陪玩
-- 養 AI 助理踩過的坑
+- 養 AI 助理的心得
 
 ---
 
@@ -405,15 +405,31 @@
 ## Takeaway
 
 <div class="highlight-box">
-AI 助理不是讓你變成 10 倍速超人，<br>
-而是幫你少做一點討厭的事，<br>
-多留一點力氣當人。
+AI 助理跟人類助理沒有差那麼多<br>
+選對人、給清楚流程、放在適合的工作環境<br>
+才能真的幫上忙
 </div>
 
 ---
 
 ## Links
 
-- [AI 碎碎念](https://www.threads.com/@stringpiggy)
-- [個人網站](https://candys.page)
-- [土豆妹 Threads](https://www.threads.com/@twodoughmay)
+<div class="link-qr-grid">
+  <div class="link-qr-card">
+    <img src="assets/qr-stringpiggy.png" alt="AI 碎碎念 QRCode">
+    <strong>AI 碎碎念</strong>
+    <span><a href="https://threads.com/@stringpiggy">@stringpiggy</a></span>
+  </div>
+
+  <div class="link-qr-card">
+    <img src="assets/qrcode_candys.page.png" alt="個人網站 QRCode">
+    <strong>個人網站</strong>
+    <span><a href="https://candys.page">candys.page</a></span>
+  </div>
+
+  <div class="link-qr-card">
+    <img src="assets/qrcode-twodoughmay.png" alt="土豆妹 Threads QRCode">
+    <strong>土豆妹 Threads</strong>
+    <span><a href="https://threads.com/@twodoughmay">@twodoughmay</a></span>
+  </div>
+</div>
